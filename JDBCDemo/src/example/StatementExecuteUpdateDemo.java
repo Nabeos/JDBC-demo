@@ -26,8 +26,8 @@ public class StatementExecuteUpdateDemo {
             numberRowsAffected = st.executeUpdate(sqlUpdate);
             System.out.println("Affected rows after updated: " + numberRowsAffected);
             // Delete
-            String sqlDelte = "DELETE FROM customer_info WHERE customerName = 'user1'";
-            numberRowsAffected = st.executeUpdate(sqlDelte);
+            String sqlDelete = "DELETE FROM customer_info WHERE customerName = 'user1'";
+            numberRowsAffected = st.executeUpdate(sqlDelete);
             System.out.println("Affected rows after deleted: " + numberRowsAffected);
         }
   }

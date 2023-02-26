@@ -4,7 +4,6 @@ import java.sql.CallableStatement;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.sql.Types;
 
 import context.DBContext;
 
@@ -14,6 +13,7 @@ public class CallableDemo {
     try (
       Connection con = DBContext.getConnection();
       CallableStatement callableStatement = con.prepareCall(sql)) {
+        // setter
         callableStatement.setString(1, "duy anh vu");
         callableStatement.executeQuery();
         ResultSet rs = callableStatement.executeQuery();

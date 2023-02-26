@@ -17,7 +17,7 @@ public class CallableWithFunction {
       // register out params
       st.registerOutParameter(1, Types.VARCHAR);
       // boolean status = st.execute();
-      ResultSet rs = st.executeQuery();
+      ResultSet rs = st.executeQuery(); // try using execute query
       while(rs.next()){
         System.out.println("total: " + rs.getString(1));
       }
