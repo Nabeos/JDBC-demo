@@ -17,7 +17,7 @@ public class TransactionDemo {
         try {
           st.executeUpdate(sqlInsert1);
           st.executeUpdate(sqlInsert2);
-          System.out.println("thanh cong");
+          System.out.println("success");
           con.commit();
         } catch (Exception e) {
           e.printStackTrace();

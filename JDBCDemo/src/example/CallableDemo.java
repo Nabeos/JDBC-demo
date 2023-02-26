@@ -10,22 +10,18 @@ import context.DBContext;
 
 public class CallableDemo {
   public static void main(String[] args) throws SQLException {
-    // String sql = "{call pro_example1(?)}";
-    String sql = "{call example3()}";
+    String sql = "{call pro_example1(?)}"; // find customer by name
     try (
       Connection con = DBContext.getConnection();
       CallableStatement callableStatement = con.prepareCall(sql)) {
-        // callableStatement.setString(1, "duy anh vu");
-        callableStatement.registerOutParameter(1, Types.INTEGER);
+        callableStatement.setString(1, "duy anh vu");
         callableStatement.executeQuery();
-        // ResultSet rs = callableStatement.executeQuery();
-        callableStatement.getInt(1);
-        callableStatement.getString(1);
-        // while(rs.next()){
-        //   // System.out.println(rs.getString(1)+" || "+rs.getString(3));
-        //   System.out.println();
-        //   System.out.println("--------");
-        // }
+        ResultSet rs = callableStatement.executeQuery();
+        while(rs.next()){
+          System.out.println(rs.getString(1)+" || "+rs.getString(3));
+          System.out.println();
+          System.out.println("--------");
+        }
     }
   }
 }
